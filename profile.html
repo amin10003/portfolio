@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>portfolio</title>
+        <script src="https:cdn.tailwindcss.com"></script>
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    </head>
+</head>
+<body>
+    <div id="main_cont" class="p-2 m-10 h-screen bg-gray-200 relative">
+        <header class="bg-emerald-600  text-white h-10 px-4 py-2 w-full flex justify-between items-center">
+            <div id="logo-div">
+                <h1 class="font-bold whitespace-nowrap text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">Mohamed Ibrahim</h1>
+            </div>
+            <!-- normal nav  -->
+            <nav class="text-xl font-semibold relative">
+                <ul class="flex gap-4 lg:gap-6">
+                    <li class="hidden md:block lg:block px-2 hover:bg-white hover:text-emerald-800">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="hidden md:block px-2 hover:bg-white hover:text-emerald-800">
+                        <a href="#">Blog</a>
+                    </li>
+                    <li class="hidden md:block px-2 hover:bg-white hover:text-emerald-800">
+                        <a href="#">Resume</a>
+                    </li>
+                    <li class="hidden md:block px-2 hover:bg-white hover:text-emerald-800">
+                        <a href="#">Achievements</a>
+                    </li>
+                    <li class="hidden md:block px-2 hover:bg-white hover:text-emerald-800">
+                        <a href="#">Projects</a>
+                    </li>
+                    <li class="hidden md:block px-2 hover:bg-white hover:text-emerald-800">
+                        <a href="#">Hobbies</a>
+                    </li>
+                    <li onclick=showSidebar() class="px-2 md:hidden hover:bg-white hover:text-emerald-800">
+                        <a href="#">
+                            <span class="material-symbols-outlined"> menu</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- mobile nav  -->
+
+                 <ul class="flex flex-col items-start  fixed top-20 right-20 z-50  bg-emerald-600 text-white sidebar">
+
+                     <li onclick="hideSidebar()" class="w-full md:hidden lg:hidden px-2 hover:bg-white hover:text-emerald-800">
+                    <!-- There should not be any space between then of the opening tag bracket and the first bracket og the end atg -->
+                <a href="#">
+                        <span class="material-symbols-outlined">close</span>
+                    </a>
+                </li>
+                    <li class="w-full md:hidden lg:hidden px-2 hover:bg-white hover:text-emerald-800">
+                        <a  href="#">Home</a>
+                    </li>
+                    <li class="w-full md:hidden lg:hidden px-2 hover:bg-white hover:text-emerald-800">
+                        <a href="#">Blog</a>
+                    </li>
+                    <li class="w-full md:hidden lg:hidden px-2 hover:bg-white hover:text-emerald-800">
+                        <a  href="#">Resume</a>
+                    </li>
+                    <li class="w-full md:hidden lg:hidden px-2 hover:bg-white hover:text-emerald-800">
+                        <a  href="#">Achievements</a>
+                    </li>
+                    <li class="w-full md:hidden lg:hidden px-2 hover:bg-white hover:text-emerald-800">
+                        <a  href="#">Projects</a>
+                    </li>
+                    <li class="w-full md:hidden lg:hidden px-2 hover:bg-white hover:text-emerald-800">
+                        <a  href="#">Hobbies</a>
+                    </li>
+                     
+            </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+</html>
