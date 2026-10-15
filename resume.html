@@ -1,0 +1,504 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mohamed Ibrahim Yusuf's resume, technical skills, education, and software development projects."
+    />
+    <title>Resume | Mohamed Ibrahim Yusuf</title>
+
+    <!-- Tailwind CSS: use the correct CDN URL -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Material Symbols used in your portfolio navigation -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Keep the resume readable when printing or saving as PDF */
+      @media print {
+        body {
+          background: white !important;
+        }
+
+        .no-print {
+          display: none !important;
+        }
+
+        #main_cont {
+          margin: 0 !important;
+          padding: 0 !important;
+          min-height: auto !important;
+          background: white !important;
+        }
+
+        .resume-sheet {
+          max-width: 100% !important;
+          box-shadow: none !important;
+          border: none !important;
+          padding: 20px !important;
+        }
+
+        a {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+
+        section,
+        article {
+          break-inside: avoid;
+        }
+
+        @page {
+          size: A4;
+          margin: 10mm;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800">
+    <div id="main_cont" class="min-h-screen bg-gray-200 p-2 sm:p-4 lg:m-6">
+
+      <!-- Header: matches your landing page -->
+      <header
+        class="bg-gray-300 text-black h-12 px-4 py-2 w-full flex justify-between items-center"
+      >
+        <div id="logo-div">
+          <h1
+            class="text-emerald-600 font-bold whitespace-nowrap text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
+          >
+            Mohamed Ibrahim
+          </h1>
+        </div>
+        <!-- normal nav  -->
+        <nav class="text-lg font-semibold relative">
+          <ul class="flex flex-nowrap gap-2 sm:gap-3 lg:gap-6">
+            <li class="hidden md:block lg:block px-2 hover:text-emerald-600">
+              <a href="/index.html">Home</a>
+            </li>
+            <li class="hidden md:block px-2 hover:text-emerald-600">
+              <a href="#">Blog</a>
+            </li>
+            <li class="hidden md:block px-2 hover:text-emerald-600">
+              <a href="/resume.html">Resume</a>
+            </li>
+            <li class="hidden md:block px-2 hover:text-emerald-600">
+              <a href="#">Achievements</a>
+            </li>
+            <li class="hidden md:block px-2 hover:text-emerald-600">
+              <a href="#">Projects</a>
+            </li>
+            <li class="hidden md:block px-2 hover:text-emerald-600">
+              <a href="#">Hobbies</a>
+            </li>
+            <li
+              onclick="showSidebar()"
+              class="px-2 md:hidden hover:text-emerald-600"
+            >
+              <a href="#">
+                <span class="material-symbols-outlined"> menu</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- mobile nav  -->
+
+          <ul
+            class="flex flex-col items-start fixed top-20 right-20 z-50 bg-gray-300 text-black sidebar"
+          >
+            <li
+              onclick="hideSidebar()"
+              class="w-full md:hidden lg:hidden px-2 hover:text-emerald-600"
+            >
+              <!-- There should not be any space between then of the opening tag bracket and the first bracket og the end atg -->
+              <a href="#">
+                <span class="material-symbols-outlined">close</span>
+              </a>
+            </li>
+            <li class="w-full md:hidden lg:hidden px-2 hover:text-emerald-600">
+              <a href="#">Home</a>
+            </li>
+            <li class="w-full md:hidden lg:hidden px-2 hover:text-emerald-600">
+              <a href="#">Blog</a>
+            </li>
+            <li class="w-full md:hidden lg:hidden px-2 hover:text-emerald-600">
+              <a href="/resume.html">Resume</a>
+            </li>
+            <li class="w-full md:hidden lg:hidden px-2 hover:text-emerald-600">
+              <a href="#">Achievements</a>
+            </li>
+            <li class="w-full md:hidden lg:hidden px-2 hover:text-emerald-600">
+              <a href="#">Projects</a>
+            </li>
+            <li class="w-full md:hidden lg:hidden px-2 hover:text-emerald-600">
+              <a href="#">Hobbies</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Page heading and download/print action -->
+      <main id="resume" class="mx-auto max-w-5xl py-8 sm:py-12">
+        <div class="no-print mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+          <div>
+            <p class="font-semibold uppercase tracking-widest text-emerald-600">
+              My professional profile
+            </p>
+            <h1 class="mt-1 text-3xl font-bold text-gray-900 sm:text-4xl">
+              Resume
+            </h1>
+            <p class="mt-2 text-gray-600">
+              Skills, training, and selected projects.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onclick="window.print()"
+            class="rounded-lg bg-emerald-600 px-5 py-3 font-semibold text-white shadow-md transition hover:bg-emerald-800"
+          >
+            <span class="material-symbols-outlined mr-1 inline-block align-middle text-xl">
+              download
+            </span>
+            Save as PDF
+          </button>
+        </div>
+
+        <!-- Resume document -->
+        <article
+          class="resume-sheet overflow-hidden border-t-4 border-emerald-600 bg-white shadow-lg"
+        >
+          <!-- Name and contact information -->
+          <div class="border-b border-gray-200 px-5 py-8 sm:px-10 sm:py-10">
+            <p class="text-sm font-bold uppercase tracking-widest text-emerald-600">
+              Resume
+            </p>
+
+            <h2 class="mt-2 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl">
+              Mohamed Ibrahim Yusuf
+            </h2>
+
+            <p class="mt-2 text-lg font-semibold text-gray-600">
+              Junior Full-Stack Developer
+            </p>
+
+            <p class="mt-4 max-w-3xl leading-relaxed text-gray-600">
+              Interested in building responsive web interfaces and practical
+              web applications with modern frontend and backend technologies.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm text-gray-600">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-emerald-600">location_on</span>
+                Nairobi, Kenya
+              </span>
+
+              <a
+                href="mailto:YOUR_EMAIL@example.com"
+                class="flex items-center gap-1 hover:text-emerald-600"
+              >
+                <span class="material-symbols-outlined text-emerald-600">mail</span>
+                YOUR_EMAIL@example.com
+              </a>
+
+              <a
+                href="https://github.com/amin10003"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-1 hover:text-emerald-600"
+              >
+                <span class="material-symbols-outlined text-emerald-600">code</span>
+                GitHub
+              </a>
+
+              <a
+                href="YOUR_LINKEDIN_URL"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-1 hover:text-emerald-600"
+              >
+                <span class="material-symbols-outlined text-emerald-600">person</span>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 px-5 py-8 sm:px-10 lg:grid-cols-3">
+
+            <!-- Main column -->
+            <div class="space-y-8 lg:col-span-2">
+
+              <!-- Professional summary -->
+              <section aria-labelledby="summary-heading">
+                <h3
+                  id="summary-heading"
+                  class="mb-3 border-b-2 border-emerald-600 pb-2 text-lg font-bold text-gray-900"
+                >
+                  Professional Summary
+                </h3>
+
+                <p class="text-sm leading-7 text-gray-600">
+                  Junior Full-Stack Developer with hands-on training and
+                  project experience in frontend and backend web development.
+                  Skilled in HTML, CSS, JavaScript, React, Python, and Django,
+                  with knowledge of PostgreSQL and REST APIs. Familiar with
+                  responsive design, version control, and technical
+                  documentation. Interested in solving practical problems
+                  through maintainable software and continuous learning.
+                </p>
+              </section>
+
+              <!-- Projects -->
+              <section id="projects" aria-labelledby="projects-heading">
+                <h3
+                  id="projects-heading"
+                  class="mb-4 border-b-2 border-emerald-600 pb-2 text-lg font-bold text-gray-900"
+                >
+                  Selected Projects
+                </h3>
+
+                <div class="space-y-5">
+
+                  <article>
+                    <div class="flex flex-wrap items-baseline justify-between gap-2">
+                      <h4 class="font-bold text-gray-900">DeenPath</h4>
+                      <a
+                        href="YOUR_DEENPATH_URL"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm font-semibold text-emerald-600 hover:underline"
+                      >
+                        View Project ↗
+                      </a>
+                    </div>
+
+                    <p class="mt-1 text-sm leading-6 text-gray-600">
+                      An Islamic application project focused on providing
+                      users with useful religious content and features.
+                    </p>
+
+                    <p class="mt-2 text-xs font-semibold text-gray-500">
+                      Technologies: React, Tailwind CSS
+                    </p>
+                  </article>
+
+                  <article>
+                    <div class="flex flex-wrap items-baseline justify-between gap-2">
+                      <h4 class="font-bold text-gray-900">DailyColorieTracker</h4>
+                      <a
+                        href="YOUR_CALORIE_TRACKER_URL"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm font-semibold text-emerald-600 hover:underline"
+                      >
+                        View Project ↗
+                      </a>
+                    </div>
+
+                    <p class="mt-1 text-sm leading-6 text-gray-600">
+                      A web application developed using Django and PostgreSQL
+                      for tracking daily calorie-related information.
+                    </p>
+
+                    <p class="mt-2 text-xs font-semibold text-gray-500">
+                      Technologies: Python, Django, PostgreSQL
+                    </p>
+                  </article>
+
+                  <article>
+                    <div class="flex flex-wrap items-baseline justify-between gap-2">
+                      <h4 class="font-bold text-gray-900">Mechanic Connector</h4>
+                      <a
+                        href="https://github.com/amin10003/mobile-mechanic"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm font-semibold text-emerald-600 hover:underline"
+                      >
+                        GitHub Repository ↗
+                      </a>
+                    </div>
+
+                    <p class="mt-1 text-sm leading-6 text-gray-600">
+                      A project concept connecting vehicle owners who need
+                      assistance with mechanics who provide vehicle services.
+                    </p>
+
+                    <p class="mt-2 text-xs font-semibold text-gray-500">
+                      Technologies: Verify against your current implementation
+                    </p>
+                  </article>
+
+                </div>
+              </section>
+
+              <!-- Education -->
+              <section id="education" aria-labelledby="education-heading">
+                <h3
+                  id="education-heading"
+                  class="mb-4 border-b-2 border-emerald-600 pb-2 text-lg font-bold text-gray-900"
+                >
+                  Education & Training
+                </h3>
+
+                <div class="space-y-5">
+                  <article class="border-l-2 border-emerald-600 pl-4">
+                    <h4 class="font-bold text-gray-900">
+                      Zindua School
+                    </h4>
+                    <p class="text-sm font-medium text-emerald-700">
+                      Full-Stack Software Engineering Bootcamp
+                    </p>
+                    <p class="mt-1 text-sm leading-6 text-gray-600">
+                      Training in frontend development, Python, Django,
+                      databases, and web application development.
+                    </p>
+                    <p class="mt-1 text-xs text-gray-500">
+                      Nairobi, Kenya | [Completion year]
+                    </p>
+                  </article>
+
+                  <article class="border-l-2 border-emerald-600 pl-4">
+                    <h4 class="font-bold text-gray-900">
+                      Fasttrack Technology Academy
+                    </h4>
+                    <p class="text-sm font-medium text-emerald-700">
+                      Front-End Web Development Bootcamp
+                    </p>
+                    <p class="mt-1 text-sm leading-6 text-gray-600">
+                      Training in HTML, CSS, JavaScript, Tailwind CSS,
+                      React, and TypeScript, with exposure to MySQL
+                      and MongoDB.
+                    </p>
+                    <p class="mt-1 text-xs text-gray-500">
+                      London, UK-based academy | Completed 2025
+                    </p>
+                  </article>
+
+                  <article class="border-l-2 border-gray-300 pl-4">
+                    <h4 class="font-bold text-gray-900">
+                      [Secondary School Name]
+                    </h4>
+                    <p class="text-sm text-gray-600">
+                      Secondary Education | [Completion year]
+                    </p>
+                  </article>
+                </div>
+              </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="space-y-8">
+
+              <!-- Technical skills -->
+              <section aria-labelledby="skills-heading">
+                <h3
+                  id="skills-heading"
+                  class="mb-4 border-b-2 border-emerald-600 pb-2 text-lg font-bold text-gray-900"
+                >
+                  Technical Skills
+                </h3>
+
+                <div class="space-y-4 text-sm">
+                  <div>
+                    <h4 class="mb-2 font-bold text-gray-800">Frontend</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="rounded bg-emerald-50 px-2 py-1 text-emerald-800">HTML5</span>
+                      <span class="rounded bg-emerald-50 px-2 py-1 text-emerald-800">CSS3</span>
+                      <span class="rounded bg-emerald-50 px-2 py-1 text-emerald-800">JavaScript</span>
+                      <span class="rounded bg-emerald-50 px-2 py-1 text-emerald-800">React</span>
+                      <span class="rounded bg-emerald-50 px-2 py-1 text-emerald-800">Tailwind CSS</span>
+                      <span class="rounded bg-emerald-50 px-2 py-1 text-emerald-800">Responsive Design</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="mb-2 font-bold text-gray-800">Backend</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="rounded bg-gray-100 px-2 py-1">Python</span>
+                      <span class="rounded bg-gray-100 px-2 py-1">Django</span>
+                      <span class="rounded bg-gray-100 px-2 py-1">REST APIs</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="mb-2 font-bold text-gray-800">Database</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="rounded bg-gray-100 px-2 py-1">PostgreSQL</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="mb-2 font-bold text-gray-800">Design & Tools</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="rounded bg-gray-100 px-2 py-1">Figma</span>
+                      <span class="rounded bg-gray-100 px-2 py-1">Git</span>
+                      <span class="rounded bg-gray-100 px-2 py-1">GitHub</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="mb-2 font-bold text-gray-800">Documentation</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="rounded bg-gray-100 px-2 py-1">README files</span>
+                      <span class="rounded bg-gray-100 px-2 py-1">Technical Writing</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Soft skills -->
+              <section aria-labelledby="soft-skills-heading">
+                <h3
+                  id="soft-skills-heading"
+                  class="mb-3 border-b-2 border-emerald-600 pb-2 text-lg font-bold text-gray-900"
+                >
+                  Soft Skills
+                </h3>
+
+                <ul class="space-y-2 text-sm leading-6 text-gray-600">
+                  <li>• Critical thinking</li>
+                  <li>• Problem-solving</li>
+                  <li>• Collaboration</li>
+                  <li>• Continuous learning</li>
+                  <li>• Technical documentation</li>
+                </ul>
+              </section>
+
+              <!-- Interests -->
+              <section aria-labelledby="interests-heading">
+                <h3
+                  id="interests-heading"
+                  class="mb-3 border-b-2 border-emerald-600 pb-2 text-lg font-bold text-gray-900"
+                >
+                  Interests
+                </h3>
+
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li>Reading</li>
+                  <li>Cycling</li>
+                  <li>Riding</li>
+                </ul>
+              </section>
+
+            </aside>
+          </div>
+
+          <!-- Footer -->
+          <footer class="border-t border-gray-200 bg-gray-50 px-5 py-4 text-center text-xs text-gray-500 sm:px-10">
+            Mohamed Ibrahim Yusuf · Junior Full-Stack Developer
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
